@@ -1,0 +1,47 @@
+.none{
+    text-decoration: none;
+}
+.text-purple{
+    color: rgb(91, 56, 123);
+}
+
+.bold {
+    font-weight: bold ;
+}
+.fonts-28{
+    font-size: 28px;
+}
+
+.btn-outline-purple {
+    color: rgb(255, 255, 255);
+    background-color: rgb(91, 56, 123);
+    border-color: rgb(91, 56, 123);
+}
+
+.btn-outline-purple:hover {
+    color: rgb(91, 56, 123);
+    background-color: #fff;
+    border-color: rgb(91, 56, 123);
+}
+
+.btn-outline-purple:focus, .btn-outline-purple.focus {
+    box-shadow: 0 0 0 0.25rem rgba(91, 56, 123, 0.5);
+}
+
+.btn-outline-purple.disabled, .btn-outline-purple:disabled {
+    color: rgb(91, 56, 123);
+    background-color: transparent;
+}
+
+.btn-outline-purple:not(:disabled):not(.disabled):active, .btn-outline-purple:not(:disabled):not(.disabled).active,
+.show > .btn-outline-purple.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(91, 56, 123);
+    border-color: rgb(91, 56, 123);
+}
+
+.btn-outline-purple:not(:disabled):not(.disabled):active:focus, .btn-outline-purple:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-purple.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(91, 56, 123, 0.5);
+}
+  
