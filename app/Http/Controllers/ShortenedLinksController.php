@@ -71,9 +71,9 @@ class ShortenedLinksController extends Controller
         $shortenedlink = env('DOMAIN').$insertData['custom_url'];
         try {
             ShortenedLinks::create($insertData);
-            if($user === null){
+            if($user === "Guest's"){
                 return redirect('/home')->with('success', 'Congratulations, your links is '. $shortenedlink);
-            } elseif ($user!== null) {
+            } elseif ($user!== "Guest's") {
                 $user = auth()->user()->username;
                 return redirect('/dashboard/link/'.$user)->with('success', 'Congratulations, your links is '. $shortenedlink);
             }
@@ -129,7 +129,8 @@ class ShortenedLinksController extends Controller
     public function goToLink($shortenedUrl)
     {
         $link = ShortenedLinks::where('custom_url', $shortenedUrl)->firstOrFail();
-        return redirect($link->original_url);
+        header("Location: " . $link->original_url, true, 301);
+        exit();
     }
     public function latest(Request $request)
     {
