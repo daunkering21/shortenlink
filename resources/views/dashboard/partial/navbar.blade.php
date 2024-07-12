@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow mb-1">
     <div class="container">
         <a class="navbar-brand bold fonts-28" href="/home">
-            <img src="../assets/logo/lovidea_purple.png" style="width:37px" alt="kosong">
+            <img src="/../assets/logo/lovidea_purple.png" style="width:37px" alt="kosong">
             <span class="text-warning">Lov</span><span class="text-purple">Idea</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ">
                 <li class="nav-item ">
-                    <a class="nav-link {{ Request::is('home*') || Request::is('/') ? 'bold' : '' }}" href="/home"><span class="text-secondary">Home</span></a>
+                    <a class="nav-link {{ Request::is('home*') ? 'bold' : '' }}" href="/home"><span class="text-secondary">Home</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::is('articles*') ? 'bold' : '' }}" href="/articles"><span class="text-secondary">Articles</span></a>

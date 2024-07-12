@@ -11,11 +11,14 @@ return new class extends Migration
         Schema::create('shortened_links', function (Blueprint $table) {
             $table->id();
             $table->string('username_id');
-            $table->string('title');
-            $table->string('description');
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
             $table->text('original_url');
-            $table->string('shortened_url');
-            $table->string('custom_url');
+            $table->string('shortened_url')->unique();
+            $table->string('custom_url')->unique();
+            $table->string('tags');
+            $table->string('click_location')->nullable();
+            $table->integer('total_click')->default(0);
             $table->timestamps();
         });
     }
