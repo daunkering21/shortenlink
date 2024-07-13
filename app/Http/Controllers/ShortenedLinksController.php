@@ -72,10 +72,10 @@ class ShortenedLinksController extends Controller
         try {
             ShortenedLinks::create($insertData);
             if($user === "Guest's"){
-                return redirect('/home')->with('success', 'Congratulations, your links is '. $shortenedlink);
+                return redirect('/home')->with('copy', 'Congratulations, your links is '. $shortenedlink);
             } elseif ($user!== "Guest's") {
                 $user = auth()->user()->username;
-                return redirect('/dashboard/link/'.$user)->with('success', 'Congratulations, your links is '. $shortenedlink);
+                return redirect('/dashboard/link/'.$user)->with('copy', 'Congratulations, your links is '. $shortenedlink);
             }
         } catch (\Exception $e) {
             return response()->json(['message' => 'not success', 'error' => $e->getMessage()], 500);

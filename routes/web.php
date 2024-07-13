@@ -18,6 +18,7 @@ Route::get('/logout', [DashboardController::class, 'logout']);
 Route::get('/register', [DashboardController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register', [DashboardController::class, 'store']);
 Route::get('/features',[DashboardController::class, 'features']);
+Route::get('/feedback',[DashboardController::class, 'feedback']);
 
 Route::middleware('auth')->group(function(){
     // Homepage

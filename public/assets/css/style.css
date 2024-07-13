@@ -88,6 +88,12 @@
 .ldlp04{
     background: url('/../assets/img/ldlp04.jpg') center / cover ;
 }
+.ldlp05{
+    background: url('/../assets/img/ldlp05.jpg') center / cover ;
+}
+.ldlp06{
+    background: url('/../assets/img/ldlp06.jpg') center / cover ;
+}
 .blbg{
     background: url('/../assets/img/blbg.jpg') center / cover;
 }
@@ -118,6 +124,11 @@ textarea::placeholder {
 }
 .bg-grey-10{
     background-color: #e2e2e2;
+}
+
+.form-control {
+    max-width: 500px; /* Atur lebar maksimal sesuai kebutuhan */
+    margin: 0 auto;   /* Untuk memusatkan elemen input */
 }
 
 /* Jumbotrons */

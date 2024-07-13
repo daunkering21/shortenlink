@@ -21,6 +21,9 @@
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::is('features*') ? 'bold' : '' }}" href="/features"><span class="text-secondary">Features</span></a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link {{ Request::is('feedback*') ? 'bold' : '' }}" href="/feedback"><span class="text-secondary">Feedback</span></a>
+                </li>
                 @if(auth()->user() !== null)
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::is('dashboard*') ? 'bold' : '' }}" href="/dashboard"><span class="text-secondary">Dashboard</span></a>
