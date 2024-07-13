@@ -8,11 +8,11 @@
                     @csrf
                     <div class="mb-3 text-center">
                         <label for="name" class="form-label"><span class="text-secondary bold">Name</span></label>
-                        <input type="text" class="form-control text-center" id="name" name="name" placeholder='" John/Jane Doe... "' value="{{ old('name') }}">
+                        <input type="text" class="form-control text-center" id="name" name="name" placeholder='" John/Jane Doe... "' value="{{ old('name') }}" required>
                     </div>
                     <div class="mb-3 text-center">
                         <label for="username" class="form-label"><span class="text-secondary bold">Username</span></label>
-                        <input type="text" class="form-control text-center" id="username" name="username" placeholder='" lovidea... "' value="{{ old('username') }}">
+                        <input type="text" class="form-control text-center" id="username" name="username" placeholder='" lovidea... "' value="{{ old('username') }}" required>
                     </div>
                     <div class="mb-3 text-center">
                         <label for="email" class="form-label"><span class="text-secondary bold">Email</span></label>
@@ -20,11 +20,11 @@
                     </div>
                     <div class="mb-3 text-center">
                         <label for="password" class="form-label"><span class="text-secondary bold">Password</span></label>
-                        <input type="password" class="form-control text-center" id="password" name="password" placeholder='" Stt... keep it secret "'>
+                        <input type="password" class="form-control text-center" id="password" name="password" placeholder='" Stt... keep it secret "' required>
                     </div>
                     <div class="mb-3 text-center">
                         <label for="confirm_password" class="form-label"><span class="text-secondary bold">Confirm Password</span></label>
-                        <input type="password" class="form-control text-center" id="confirm_password" name="confirm_password" placeholder='" Another secret, please.. "'>
+                        <input type="password" class="form-control text-center" id="confirm_password" name="confirm_password" placeholder='" Another secret, please.. "' required>
                     </div>
                     <button type="submit" class="btn btn-purple">Submit</button>
                 </form>

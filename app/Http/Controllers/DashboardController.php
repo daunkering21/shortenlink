@@ -75,7 +75,7 @@ class DashboardController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:20|string',
             'username' => 'required|max:20|string',
-            'email' => 'required|email|string',
+            'email' => 'email|string',
             'password' => 'required|max:255|string',
             'confirm_password' => 'required|max:255|string',
         ]);
