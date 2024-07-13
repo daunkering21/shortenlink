@@ -40,7 +40,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             let fullMessage = '{{ session('copy') }}';
-            let url = fullMessage.match(/https?:\/\/[^\s]+/)[0];
+            console.log('Full message:', fullMessage); // Debugging
+
+            let urlMatch = fullMessage.match(/https?:\/\/[^\s]+/);
+            if (!urlMatch) {
+                console.error('URL not found in the message:', fullMessage);
+                return;
+            }
+
+            let url = urlMatch[0];
+            console.log('Extracted URL:', url); // Debugging
 
             Swal.fire({
                 text: fullMessage,

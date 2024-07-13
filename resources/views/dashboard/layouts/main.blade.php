@@ -33,35 +33,44 @@
             confirmButtonText: 'OK'
         });
     </script>
-     @elseif(session()->has('copy'))
-     <script>
-         document.addEventListener('DOMContentLoaded', function () {
-             let fullMessage = '{{ session('copy') }}';
-             let url = fullMessage.match(/https?:\/\/[^\s]+/)[0];
- 
-             Swal.fire({
-                 text: fullMessage,
-                 icon: 'success',
-                 showCancelButton: true,
-                 confirmButtonText: 'Copy',
-                 cancelButtonText: 'Close'
-             }).then((result) => {
-                 if (result.isConfirmed) {
-                     const tempTextarea = document.createElement('textarea');
-                     tempTextarea.value = url;
-                     document.body.appendChild(tempTextarea);
-                     tempTextarea.select();
-                     document.execCommand('copy');
-                     document.body.removeChild(tempTextarea);
- 
-                     Swal.fire({
-                         text: 'Link copied to clipboard!',
-                         icon: 'success'
-                     });
-                 }
-             });
-         });
-     </script>
+    @elseif(session()->has('copy'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let fullMessage = '{{ session('copy') }}';
+            console.log('Full message:', fullMessage); // Debugging
+
+            let urlMatch = fullMessage.match(/https?:\/\/[^\s]+/);
+            if (!urlMatch) {
+                console.error('URL not found in the message:', fullMessage);
+                return;
+            }
+
+            let url = urlMatch[0];
+            console.log('Extracted URL:', url); // Debugging
+
+            Swal.fire({
+                text: fullMessage,
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonText: 'Copy',
+                cancelButtonText: 'Close'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const tempTextarea = document.createElement('textarea');
+                    tempTextarea.value = url;
+                    document.body.appendChild(tempTextarea);
+                    tempTextarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempTextarea);
+
+                    Swal.fire({
+                        text: 'Link copied to clipboard!',
+                        icon: 'success'
+                    });
+                }
+            });
+        });
+    </script>
     @endif
     <script src="/../assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
