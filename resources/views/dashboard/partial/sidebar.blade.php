@@ -84,7 +84,7 @@
             </a>
             <ul id="settings" class="sidebar-dropdown list-unstyled collapse bold" data-bs-parent="#sidebar">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">Profile</a>
+                    <a href="/dashboard/profile" class="sidebar-link">Profile</a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">Supports</a>

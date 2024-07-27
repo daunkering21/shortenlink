@@ -21,31 +21,47 @@ class DashboardController extends Controller
     }
     public function biolink()
     {
-        return view('dashboard.biolink.index');
+        $username = $this->username();
+        return view('dashboard.biolink.index',[
+            'username' => $username
+        ]);
     }
     public function analytics()
     {
-        return view('dashboard.analytics.index');
+        $username = $this->username();
+        return view('dashboard.analytics.index',[
+            'username' => $username
+        ]);
     }
     public function articles()
     {
-        return view('dashboard.articles.index');
+        $username = $this->username();
+        return view('dashboard.articles.index',[
+            'username' => $username
+        ]);
     }
     public function profile()
     {
-        
+        $user = auth()->user();
+        return view('dashboard.profile.index',[
+            'user' => $user
+        ]);
     }
     public function index()
     {
-        return view('dashboard.homepage');
+        $username = $this->username();
+        return view('dashboard.homepage',[
+            'username' => $username
+        ]);
+    }
+    private function username()
+    {
+        $user = auth()->user()->username;
+        return $user;
     }
     public function auth(Request $request)
     {
         try {
-            if ($request->password !== $request->confirm_password) {
-                return redirect('/login')->with('error', 'Password not match');
-            }
-
             $request->validate([
                 'user' => 'required|string',
                 'password' => 'required|string',

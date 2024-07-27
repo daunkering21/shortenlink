@@ -14,10 +14,6 @@
                         <label for="password" class="form-label"><span class="text-secondary bold">Password</span></label>
                         <input type="password" class="form-control text-center" id="password" name="password" placeholder='" Tell me your secret..  "' required>
                     </div>
-                    <div class="mb-3 text-center">
-                        <label for="confirm_password" class="form-label"><span class="text-secondary bold">Password Confirmation</span></label>
-                        <input type="password" class="form-control text-center" id="confirm_password" name="confirm_password" placeholder='" Confirm the secret again... "' required>
-                    </div>
                     <button type="submit" class="btn btn-purple">Submit</button>
                 </form>
             </div>

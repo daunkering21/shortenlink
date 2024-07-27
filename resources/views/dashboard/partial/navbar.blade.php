@@ -12,15 +12,15 @@
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::is('home*') ? 'bold' : '' }}" href="/home"><span class="text-secondary">Home</span></a>
                 </li>
-                <li class="nav-item ">
+                {{-- <li class="nav-item ">
                     <a class="nav-link {{ Request::is('articles*') ? 'bold' : '' }}" href="/articles"><span class="text-secondary">Articles</span></a>
-                </li>
+                </li> --}}
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::is('links*') ? 'bold' : '' }}" href="/links"><span class="text-secondary">Link</span></a>
                 </li>
-                <li class="nav-item ">
+                {{-- <li class="nav-item ">
                     <a class="nav-link {{ Request::is('features*') ? 'bold' : '' }}" href="/features"><span class="text-secondary">Features</span></a>
-                </li>
+                </li> --}}
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::is('feedback*') ? 'bold' : '' }}" href="/feedback"><span class="text-secondary">Feedback</span></a>
                 </li>
