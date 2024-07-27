@@ -7,7 +7,6 @@ use App\Models\Filter;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ShortenedLinks;
-use App\Models\User;
 
 class ShortenedLinksController extends Controller
 {

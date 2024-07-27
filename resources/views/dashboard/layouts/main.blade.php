@@ -24,12 +24,20 @@
         <div class="card-footer text-body-secondary">
             Copyright© - All rights reserved 2024.
         </div>
-        </div>
+    </div>
     @if(session()->has('success'))
     <script>
         Swal.fire({
             text: '{{ session('success') }}',
             icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    </script>
+    @elseif(session()->has('error'))
+    <script>
+        Swal.fire({
+            text: '{{ session('error') }}',
+            icon: 'error',
             confirmButtonText: 'OK'
         });
     </script>

@@ -52,6 +52,28 @@
                         $perPage = $data->perPage();
                         $startNumber = ($currentPage - 1) * $perPage + 1;
                     @endphp
+                    <form id="searchForm" action="/dashboard/link/{{ $username }}" method="GET" >
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="text" class="form-control text-center bg-grey-10" id="original_url" name="original_url" placeholder='link search' value="{{ request('original_url') }}">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control text-center bg-grey-10" id="custom_url" name="custom_url" placeholder='link search' value="{{ request('custom_url') }}">
+                            </td>
+                            <td></td>
+                            <td>
+                                <button type="submit" class="btn btn-warning">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                        </svg>
+                                    </span>
+                                    Search
+                                </button>
+                            </td>
+                        </tr>
+                    </form>
                     @foreach($data as $index => $d)
                     <tr>
                         <td>{{ $index + $startNumber }}</td>
@@ -59,9 +81,9 @@
                             <span class="text-truncate">{{ $d['original_url'] }}</span>
                         </td>
                         <td id="copy_url_{{ $d['custom_url'] }}">{{ env('DOMAIN') }}{{ $d['custom_url'] }}</td>
-                        <td class="col-4">
+                        <td class="justify-content-center align-items-center">
                             <button id="url_{{ $d['custom_url'] }}" type="button" onclick="copyToClipboard('{{ $d['custom_url'] }}')" class="btn btn-outline-purple">Copy</button>
-                        </td>                
+                        </td>
                         <td class="d-flex gap-2">
                             <a href="/dashboard/link/{{ $username }}/{{ $d['custom_url'] }}/edit" class="btn btn-success">Edit</a>
                             <form id="deleteForm" action="/dashboard/link/{{ $username }}/{{ $d['custom_url'] }}" method="post">
@@ -74,12 +96,13 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $data->links() }}
         </div>
     </div>
       
 </div>
 @foreach([
-    'url_original',
+    'original_url',
     'custom_url',
     'title',
     'description',
@@ -141,6 +164,22 @@
             }
         });
     }
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        const inputs = [
+            'original_url',
+            'custom_url'
+        ];
+        inputs.forEach(id => {
+            const inputElement = document.getElementById(id);
+            if (!inputElement.value) {
+                inputElement.disabled = true; // Disable input if it's empty
+            } else {
+                inputElement.disabled = false; // Ensure input is enabled if it's not empty
+            }
+        });
+    });
+
 
 </script>  
 @endsection

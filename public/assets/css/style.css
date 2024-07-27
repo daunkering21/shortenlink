@@ -291,3 +291,13 @@ textarea::placeholder {
 .w-40{
     width: 10%;
 }
+
+/* tstslt */
+
+.t-10 td {
+    height: 120px;
+    padding: 0;
+    justify-items: center;
+    text-align: center; /* Perataan horizontal */
+    vertical-align: middle; /* Perataan vertikal */
+}

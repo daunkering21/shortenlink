@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ArticlesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestingController;
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ShortenedLinksController;
 
