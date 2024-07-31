@@ -11,7 +11,6 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [DashboardController::class, 'homepage']);
-Route::get('/kokokokoko',[TestingController::class, 'save']);
 
 // ==================== Dashboard ==================== \\
 Route::get('/login', [DashboardController::class, 'login'])->name('login')->middleware('guest');
