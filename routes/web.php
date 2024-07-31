@@ -11,6 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [DashboardController::class, 'homepage']);
+Route::get('/kokokokoko',[TestingController::class, 'save']);
 
 // ==================== Dashboard ==================== \\
 Route::get('/login', [DashboardController::class, 'login'])->name('login')->middleware('guest');
@@ -43,4 +44,3 @@ Route::get('/articles',[ArticlesController::class, 'index']);
 Route::post('/short', [ShortenedLinksController::class, 'store']);
 Route::get('/links', [ShortenedLinksController::class, 'latest']);
 Route::get('{shortenedUrl}', [ShortenedLinksController::class, 'goToLink']);
-Route::get('/asimilikitti',[TestingController::class, 'save']);
