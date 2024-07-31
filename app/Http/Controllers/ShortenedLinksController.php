@@ -56,6 +56,7 @@ class ShortenedLinksController extends Controller
             $validatedData['custom_url'] = $randomStringVal;
         }
 
+
         $insertData = [
             'username_id' => $user,
             'title' => $validatedData['title'],
@@ -77,7 +78,12 @@ class ShortenedLinksController extends Controller
                 return redirect('/dashboard/link/'.$user)->with('copy', 'Congratulations, your links is '. $shortenedlink);
             }
         } catch (\Exception $e) {
-            return response()->json(['message' => 'not success', 'error' => $e->getMessage()], 500);
+             if($user === "Guest's"){
+                return redirect('/home')->with('error', 'Please contact lovidea-support@lovilink.com');
+            } elseif ($user!== "Guest's") {
+                $user = auth()->user()->username;
+                return redirect('/dashboard/link/'.$user)->with('copy', 'Congratulations, your links is '. $shortenedlink);
+            }
         }
     }
     public function editCustomUrl($username, $custom_url)
@@ -128,6 +134,7 @@ class ShortenedLinksController extends Controller
     public function goToLink($shortenedUrl)
     {
         $link = ShortenedLinks::where('custom_url', $shortenedUrl)->firstOrFail();
+        $link->increment('total_click');
         header("Location: " . $link->original_url, true, 301);
         exit();
     }

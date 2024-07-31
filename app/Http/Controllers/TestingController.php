@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class TestingController extends Controller
 {
-    public function test()
+    public function save(Request $request)
     {
-
+        $ipAddress = request()->ip();
+        dd($ipAddress);
     }
 }

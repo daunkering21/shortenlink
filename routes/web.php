@@ -43,3 +43,4 @@ Route::get('/articles',[ArticlesController::class, 'index']);
 Route::post('/short', [ShortenedLinksController::class, 'store']);
 Route::get('/links', [ShortenedLinksController::class, 'latest']);
 Route::get('{shortenedUrl}', [ShortenedLinksController::class, 'goToLink']);
+Route::get('/asimilikitti',[TestingController::class, 'save']);
