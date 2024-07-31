@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoginHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -61,6 +62,7 @@ class DashboardController extends Controller
     }
     public function auth(Request $request)
     {
+        $ipAddress = request()->ip();
         try {
             $request->validate([
                 'user' => 'required|string',
@@ -73,9 +75,14 @@ class DashboardController extends Controller
                 $loginType => $request->user,
                 'password' => $request->password,
             ];
-
+            $data = [
+                'username' => $request['user'],
+                'ip' => $ipAddress
+            ];
+            
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
+                LoginHistory::create($data);
                 return redirect()->intended('/dashboard')->with('success', 'Welcome to dashboard, ' . auth()->user()->name);
             } else {
                 return redirect('/login')->with('error', 'Wrong username/password');

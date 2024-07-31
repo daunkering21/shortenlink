@@ -8,6 +8,6 @@ class TestingController extends Controller
 {
     public function save(Request $request)
     {
-        $ipAddress = request()->ip();
+        
     }
 }
