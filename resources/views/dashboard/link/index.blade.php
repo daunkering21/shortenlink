@@ -42,6 +42,7 @@
                         <th>No.</th>
                         <th>Links</th>
                         <th>Shortened Links</th>
+                        <th>Total Click</th>
                         <th></th>
                         <th>Action</th>
                     </tr>
@@ -62,6 +63,7 @@
                                 <input type="text" class="form-control text-center bg-grey-10" id="custom_url" name="custom_url" placeholder='link search' value="{{ request('custom_url') }}">
                             </td>
                             <td></td>
+                            <td></td>
                             <td>
                                 <button type="submit" class="btn btn-warning">
                                     <span>
@@ -81,6 +83,9 @@
                             <span class="text-truncate">{{ $d['original_url'] }}</span>
                         </td>
                         <td id="copy_url_{{ $d['custom_url'] }}">{{ env('DOMAIN') }}{{ $d['custom_url'] }}</td>
+                        <td>
+                            <span class="text-truncate">{{ $d['total_click'] }}</span>
+                        </td>
                         <td class="justify-content-center align-items-center">
                             <button id="url_{{ $d['custom_url'] }}" type="button" onclick="copyToClipboard('{{ $d['custom_url'] }}')" class="btn btn-outline-purple">Copy</button>
                         </td>

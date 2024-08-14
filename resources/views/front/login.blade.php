@@ -8,7 +8,7 @@
                     @csrf
                     <div class="mb-3 text-center">
                         <label for="username" class="form-label"><span class="text-secondary bold">Username/Email</span></label>
-                        <input type="text" class="form-control text-center" id="username" name="user" placeholder='" Enter your username/email... "' required>
+                        <input type="text" class="form-control text-center" id="username" name="user" placeholder='" Enter your username/email... "' required autofocus>
                     </div>
                     <div class="mb-3 text-center">
                         <label for="password" class="form-label"><span class="text-secondary bold">Password</span></label>
