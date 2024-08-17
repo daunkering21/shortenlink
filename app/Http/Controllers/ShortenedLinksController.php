@@ -36,6 +36,9 @@ class ShortenedLinksController extends Controller
         } else {
             $user = $user->username;
         }
+        if(stripos($request->url, 'lovilink') !== false) {
+            return redirect('/dashboard/link/'.$user)->with('error', "Cannot do this");
+        }
         $randomStringVal = Str::random(8);
         $validatedData = $request->validate([
             'url' => 'required',
