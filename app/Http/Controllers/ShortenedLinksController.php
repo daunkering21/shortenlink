@@ -145,7 +145,9 @@ class ShortenedLinksController extends Controller
     {
         $parameter = [];
         foreach ($request->all() as $index => $d){
-            $parameter[] = $index;
+            if($index !== 'page_count') {
+                $parameter[] = $index;
+            }
         }
         $rawData = collect(ShortenedLinks::where('username_id', "Guest's")->get());
         $data = Filter::filterAndPaginate($rawData, 15, $parameter, 'created_at');

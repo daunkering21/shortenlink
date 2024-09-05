@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="create your own bio link with us, shorten the link never this simple!">
+    <meta name="keywords" content="shorten, link, shorturl, redirect, shortlink">
+    <meta property="og:title" content="Lovidea Shorten Link">
+    <meta property="og:description" content="Shorten link never this simple!">
+    <meta property="og:image" content="/public/assets/img/page.png">
+    <meta property="og:url" content="{{ env('DOMAIN') }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" >
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>

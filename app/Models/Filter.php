@@ -22,7 +22,6 @@ class Filter extends Model
             }
             return true;
         });
-
         $currentPage = Paginator::resolveCurrentPage();
         $perPage = $page;
         $currentPageItems = $filteredData->slice(($currentPage - 1) * $perPage, $perPage)->values();
