@@ -7,7 +7,7 @@
     <meta name="keywords" content="shorten, link, shorturl, redirect, shortlink">
     <meta property="og:title" content="Lovidea Shorten Link">
     <meta property="og:description" content="Shorten link never this simple!">
-    <meta property="og:image" content="/public/assets/img/page.png">
+    <meta property="og:image" content="https://lovilink.com/assets/img/page.png">
     <meta property="og:url" content="{{ env('DOMAIN') }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" >
