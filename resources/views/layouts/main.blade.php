@@ -11,6 +11,8 @@
     <meta property="og:description" content="Shortening links has never been this simple!">
     <meta property="og:image" content="https://lovilink.com/assets/img/page.png">
     <meta property="og:url" content="https://lovidea.com">
+    <meta property="og:type" content="website">
+
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
