@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="create your own bio link with us, shorten the link never this simple!">
+    <meta name="description" content="Create your own bio link with us, shortening links has never been this simple!">
     <meta name="keywords" content="shorten, link, shorturl, redirect, shortlink">
+    
+    <!-- Open Graph -->
     <meta property="og:title" content="Lovidea Shorten Link">
-    <meta property="og:description" content="Shorten link never this simple!">
-    <meta property="og:image" content="https://lovilink.com/assets/img/page.png">
-    <meta property="og:url" content="{{ env('DOMAIN') }}">
+    <meta property="og:description" content="Shortening links has never been this simple!">
+    <meta property="og:image" content="https://lovidea.com/assets/img/page.png">
+    <meta property="og:url" content="https://lovidea.com">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" >
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-    <title>LovIdea Short Link</title>
-    <link rel="icon" type="image/x-icon" href="../root/lovidea.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" >
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap">
     <link rel="stylesheet" href="../assets/css/style.css">
-</head>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+    <title>LovIdea Short Link</title>
+    <link rel="icon" type="image/x-icon" href="https://lovidea.com/root/lovidea.ico">
+</head>  
 <body>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1"></script>
     @include('partial.navbar')
