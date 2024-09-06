@@ -12,6 +12,7 @@
     <meta property="og:image" content="https://lovilink.com/assets/img/page.png">
     <meta property="og:url" content="https://lovilink.com">
     <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="1246995273070330" />
     
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
