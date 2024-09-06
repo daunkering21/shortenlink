@@ -24,7 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 
     <title>LovIdea Short Link</title>
-    <link rel="icon" type="image/x-icon" href="https://lovidea.com/root/lovidea.ico">
+    <link rel="icon" type="image/x-icon" href="https://lovilink.com/root/lovidea.ico">
 </head>  
 <body>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1"></script>
