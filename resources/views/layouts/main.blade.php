@@ -13,6 +13,8 @@
     <meta property="og:url" content="https://lovilink.com">
     <meta property="og:type" content="website">
     <meta property="fb:app_id" content="1246995273070330" />
+    <!-- Google -->
+    <meta name="google-site-verification" content="fWnter7hioZcQFqIw4Z3aCd2fCcUHmAYLNnU3uEQMm4" />
     
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
