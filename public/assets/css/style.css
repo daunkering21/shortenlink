@@ -301,3 +301,7 @@ textarea::placeholder {
     text-align: center; /* Perataan horizontal */
     vertical-align: middle; /* Perataan vertikal */
 }
+
+.min-h100{
+    min-height: 100dvh
+}

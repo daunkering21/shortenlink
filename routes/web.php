@@ -42,4 +42,5 @@ Route::get('/articles',[ArticlesController::class, 'index']);
 // ==================== Shortened Links ==================== \\
 Route::post('/short', [ShortenedLinksController::class, 'store']);
 Route::get('/links', [ShortenedLinksController::class, 'latest']);
+Route::get('/asoyGeb0yMujaer', [TestingController::class, 'testgeboymujaer']);
 Route::get('{shortenedUrl}', [ShortenedLinksController::class, 'goToLink']);
