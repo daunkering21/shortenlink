@@ -59,7 +59,6 @@ class ShortenedLinksController extends Controller
             $validatedData['custom_url'] = $randomStringVal;
         }
 
-
         $insertData = [
             'username_id' => $user,
             'title' => $validatedData['title'],

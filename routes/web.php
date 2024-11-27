@@ -6,9 +6,7 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ShortenedLinksController;
 
-Route::get('/', function () {
-    return view('front.homepage');
-});
+Route::get('/', [DashboardController::class, 'homepage']);
 
 Route::get('/home', [DashboardController::class, 'homepage']);
 

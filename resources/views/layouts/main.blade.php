@@ -30,7 +30,6 @@
     <link rel="icon" type="image/x-icon" href="https://lovilink.com/root/lovidea.ico">
 </head>  
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1"></script>
     @include('partial.navbar')
     @yield('container')
     <div class="card text-center mt-auto">
@@ -38,6 +37,7 @@
             Copyright© - All rights reserved 2024.
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1"></script>
     @if(session()->has('success'))
     <script>
         Swal.fire({
