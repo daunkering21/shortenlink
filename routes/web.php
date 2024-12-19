@@ -32,7 +32,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/dashboard/biolink/{username}',[DashboardController::class, 'biolink']);
     Route::get('/dashboard/analytics/{username}',[DashboardController::class, 'analytics']);
     Route::get('/dashboard/articles/{username}',[DashboardController::class, 'articles']);
+
 });
+Route::post('validate-password', [ShortenedLinksController::class, 'pass']);
 
 // ==================== Blogs Page ==================== \\
 Route::get('/articles',[ArticlesController::class, 'index']);
@@ -41,4 +43,4 @@ Route::get('/articles',[ArticlesController::class, 'index']);
 Route::post('/short', [ShortenedLinksController::class, 'store']);
 Route::get('/links', [ShortenedLinksController::class, 'latest']);
 Route::get('/asoyGeb0yMujaer', [TestingController::class, 'testgeboymujaer']);
-Route::get('{shortenedUrl}', [ShortenedLinksController::class, 'goToLink']);
+Route::get('{shortenedUrl}', [ShortenedLinksController::class, 'goToLink'])->middleware('no_cache');
