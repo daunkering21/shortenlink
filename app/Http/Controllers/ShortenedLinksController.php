@@ -135,23 +135,28 @@ class ShortenedLinksController extends Controller
     }
     public function goToLink($shortenedUrl)
     {
+        // dd(session('password_verified'));
         if (str_starts_with($shortenedUrl, 'bkp')) {
             if (!session('password_verified')) {
                 session(['shortened_url' => $shortenedUrl]);
     
-                echo "<form method='POST' action='/validate-password' style='text-align: center; margin-top: 50px;'>";
-                echo "<input type='hidden' name='_token' value='" . csrf_token() . "'>";
-                echo "<h2>Protected Link</h2>";
-                echo "<label for='password'>Enter Password:</label><br>";
-                echo "<input type='password' id='password' name='password' required><br><br>";
-                echo "<input type='hidden' name='url' value='" . $shortenedUrl . "'><br><br>";
-                echo "<button type='submit'>Submit</button>";
-                echo "</form>";
-                exit();
+                return view('dashboard.lock.password', [
+                    'url' => $shortenedUrl,
+                ]);
+                // echo "<form method='POST' action='/validate-password' style='text-align: center; margin-top: 50px;'>";
+                // echo "<input type='hidden' name='_token' value='" . csrf_token() . "'>";
+                // echo "<h2>Protected Link</h2>";
+                // echo "<label for='password'>Enter Password:</label><br>";
+                // echo "<input type='password' id='password' name='password' required><br><br>";
+                // echo "<input type='hidden' name='url' value='" . $shortenedUrl . "'><br><br>";
+                // echo "<button type='submit'>Submit</button>";
+                // echo "</form>";
+                // exit();
             } else {
                 session()->forget(['password_verified', 'shortened_url']);
             }
         }
+
         $link = ShortenedLinks::where('custom_url', $shortenedUrl)->firstOrFail();
         $link->increment('total_click');
 
