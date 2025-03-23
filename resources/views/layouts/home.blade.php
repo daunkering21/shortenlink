@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lovilink - Lovely Link, Lovely Idea</title>
+  <title>Lovilink</title>
   
   <meta name="google" content="notranslate">
   <meta name="description" content='Tired of long and ugly urls? Feel '>
@@ -23,6 +23,7 @@
 
   @livewireStyles
   <link rel="stylesheet" href="{{ asset('assets/css/lovilink.css') }}">
+  <link rel="icon" type="image/x-icon" href="https://lovilink.com/root/lovidea.ico">
 </head>
 <body>
 
