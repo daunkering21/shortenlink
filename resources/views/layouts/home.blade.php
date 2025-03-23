@@ -18,9 +18,9 @@
 
   <meta name="google-site-verification" content="fWnter7hioZcQFqIw4Z3aCd2fCcUHmAYLNnU3uEQMm4" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+  
+  @vite(['resources/css/app.css'])
   @livewireStyles
   <link rel="stylesheet" href="{{ asset('assets/css/lovilink.css') }}">
   <link rel="icon" type="image/x-icon" href="https://lovilink.com/root/lovidea.ico">

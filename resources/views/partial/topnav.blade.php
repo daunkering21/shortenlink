@@ -33,7 +33,7 @@
 
 <div class="mobile-overlay fixed top-[315px] inset-0 bg-black bg-opacity-40 z-30 transition-opacity duration-300 ease-in-out opacity-0 min-h-screen pointer-events-none md:hidden "></div>
 
-<div id="mobile-nav" class="fixed top-[64px] left-0 w-full nav-blur shadow-md z-40 px-6 py-4 transition-all duration-300 ease-in-out
+<div id="mobile-nav" class="fixed top-nav-position left-0 w-full nav-blur shadow-md z-40 px-6 py-4 transition-all duration-300 ease-in-out
         opacity-0 scale-95 pointer-events-none md:hidden">
   <a href="{{ route('livewire-features') }}" wire:navigate class="block text-gray-700 text-center border-b border-gray-200 py-2 hover:text-gray-900">Features</a>
   <a href="{{ route('livewire-pages') }}" wire:navigate class="block text-gray-700 text-center border-b border-gray-200 py-2 hover:text-gray-900">Pages</a>

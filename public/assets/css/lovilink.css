@@ -43,7 +43,6 @@ body {
   box-shadow: 0 0 0 3px rgba(251, 158, 198, 0.3);
 }
 .card {
-  background-color: white;
   border-radius: 1rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -101,6 +100,24 @@ body {
   overflow: hidden;
   animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
 }
+.fixed {
+  position: fixed;
+}
+.top-nav-position {
+  top: 64px;
+}
+.transition-all {
+  transition-property: all;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.z-40 {
+  z-index: 40;
+}
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -139,4 +156,3 @@ body {
       grid-template-columns: 1fr;
   }
 }
-/* Test Build push */
