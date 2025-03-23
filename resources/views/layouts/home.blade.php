@@ -54,12 +54,10 @@
           .removeClass('opacity-100 pointer-events-auto');
       }
   
-      // Restore mobile nav state on Livewire page load
       if (localStorage.getItem('mobileMenuOpen') === 'true') {
         openMobileMenu();
       }
   
-      // Toggle menu
       $('#menu-toggle').on('click', function () {
         const isOpen = $nav.hasClass('opacity-100');
   
@@ -72,17 +70,11 @@
         }
       });
   
-      // Optional: Close when clicking overlay
       $overlay.on('click', function () {
         closeMobileMenu();
         localStorage.setItem('mobileMenuOpen', 'false');
       });
   
-      // Optional: auto-close after Livewire navigation (only if you want this behavior)
-      // Livewire.on('navigate', () => {
-      //   closeMobileMenu();
-      //   localStorage.setItem('mobileMenuOpen', 'false');
-      // });
     });
   </script>
   
