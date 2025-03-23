@@ -8,8 +8,6 @@ use App\Http\Controllers\ShortenedLinksController;
 
 Route::get('/', [DashboardController::class, 'homepage']);
 
-Route::get('/home', [DashboardController::class, 'homepage']);
-
 // ==================== Dashboard ==================== \\
 Route::get('/login', [DashboardController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [DashboardController::class, 'auth']);
@@ -37,6 +35,9 @@ Route::middleware('auth')->group(function(){
 
 // ==================== Blogs Page ==================== \\
 Route::get('/articles',[ArticlesController::class, 'index']);
+
+// ==================== Blogs Page ==================== \\
+require __DIR__.'/livewire.php';
 
 // ==================== Shortened Links ==================== \\
 Route::post('/short', [ShortenedLinksController::class, 'store']);

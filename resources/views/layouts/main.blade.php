@@ -34,7 +34,7 @@
     @yield('container')
     <div class="card text-center mt-auto">
         <div class="card-footer text-body-secondary">
-            Copyright© - All rights reserved 2024.
+            Copyright© - All rights reserved 2025.
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1"></script>
