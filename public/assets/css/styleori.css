@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Main Option */
+  --tone1-01: 255, 255, 212;
+  --tone1-02: 255, 248, 182;
+  --tone1-03: 242, 228, 125;
+  --tone1-04: 216, 202, 99;
+  --tone1-05: 190, 176, 72;
+  --tone1-06: 165, 151, 42;
+  --tone1-07: 141, 126, 0;
+  --tone1-08: 117, 103, 0;
+  --tone1-09: 95, 80, 0;
+  --tone1-10: 73, 58, 0;
+  --tone1-11: 52, 36, 0;
+  --tone1-12: 37, 28, 0;
+  --tone1-13: 24, 20, 0;
+
+  --tone2-01: 255, 244, 255;
+  --tone2-02: 255, 227, 255;
+  --tone2-03: 255, 192, 249;
+  --tone2-04: 228, 167, 222;
+  --tone2-05: 202, 142, 196;
+  --tone2-06: 176, 117, 171;
+  --tone2-07: 150, 94, 146;
+  --tone2-08: 126, 71, 122;
+  --tone2-09: 102, 49, 98;
+  --tone2-10: 78, 27, 76;
+  --tone2-11: 56, 4, 54;
+  --tone2-12: 38, 8, 37;
+  --tone2-13: 22, 8, 21;
+  
+  --color-white: 251, 251, 251;
+  --color-lightgrey: 233, 233, 233;
+  --color-darkgrey: 225, 225, 225;
+  --color-black: 18, 18, 18;
+
+  --rgb-light-background: rgb(var(--color-white));
+  --rgb-dark-background: rgb(var(--tone1-11)); 
+
+  --rgba-primary: var(--tone1-05);
+  --rgba-secondary: var(--tone2-04);
+  --border-primary: 1px solid rgba(var(--tone2-06), 0.5);
+}
+body {
+  background-color: var(--rgb-light-background);
+}
+
+.front-container {
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.front-background{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0 0 0 15vh;
+  border: 2vh solid rgb(var(--tone1-04));
+  border-top: none;
+  border-right: none;
+  z-index: 0;
+  background-color: rgb(var(--tone1-02));
+}
+.front-navbar {
+  width: 90vw;
+  height: 7vh;
+  margin-top: 6vh;
+  border-radius: 2vh;
+  padding: 1rem;
+  border: 1px solid rgba(var(--tone1-02), 0.5);
+  background-color: rgba(var(--color-lightgrey));
+  box-shadow: 0 0 0.5vh 0.5vh rgba(var(--color-black), 0.3);
+  z-index: 2;
+}
+
+/* clip-path */
+.left-line {
+  width: 60px;
+  height: 40vh;
+  clip-path: polygon(0 0, 20% 0, 20% 100%, 0% 100%);
+  background-color: aqua;
+}
+.bottom-line {
+  width: 100vw;
+  height: 60px;
+  clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0% 100%);
+  position: absolute;
+  bottom: 0;
+  left: 60px;
+  background-color: aqua;
+}
+.square {
+  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.quarter-circle1 {
+  width: 10%;
+  height: 10%;
+  clip-path: circle(100.0% at 100% 0);
+  background-color: rgb(var(--tone2-04));
+  position: absolute;
+  z-index: 0;
+}
