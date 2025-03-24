@@ -15,7 +15,8 @@
                     <div class="mt-8">
                         <div class="flex flex-col sm:flex-row">
                             <div class="input-container flex-1 rounded-l-full overflow-hidden mobile-adjustment-tr">
-                                <input id="animated-placeholder" type="text" placeholder="Paste your long URL here" class="w-full px-6 py-4 focus:outline-none">
+                                <input id="animated-placeholder" type="text" placeholder="Paste your long URL here" class="w-full px-6 py-4 focus:outline-none placeholder-gray-400 text-gray-900"/>
+
                             </div>
                             <button class="btn-highlight px-8 py-4 rounded-r-full text-white font-medium flex items-center justify-center mt-2 sm:mt-0 mobile-adjustment-br">
                                 Shorten
@@ -131,59 +132,53 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-4">Ready to Make Your Links Lovely?</h2>
             <p class="text-xl text-gray-700 mb-8">Join thousands of users who trust Lovilink for their URL shortening needs.</p>
-            <a href="#" class="inline-block px-8 py-4 rounded-full btn-highlight text-white font-medium text-lg">
+            <a href="/register" class="inline-block px-8 py-4 rounded-full btn-highlight text-white font-medium text-lg">
                 Get Started - It's Free
             </a>
         </div>
     </section>
 
     <script>
-        $(document).on('DOMContentLoaded livewire:navigated', function () {
-            if (window.location.pathname !== "/livewire") return;
-
-            var $input = $("#animated-placeholder");
-            if (!$input.length || $input.data("animated")) return; // Cegah animasi dobel
-
-            $input.data("animated", true); // Tandai bahwa animasi sudah jalan
-
-            var longUrl = "https://example.com/very/long/url/path";
-            var shortUrl = "https://lovilink.com/myurl";
-            var typingSpeed = 70;
-            var deletingSpeed = 40;
-            var pauseAfterTyping = 1500;
-            var i = 0;
-
-            function typePlaceholder(text, callback) {
-                if (i < text.length) {
-                $input.attr("placeholder", $input.attr("placeholder") + text.charAt(i));
-                i++;
-                setTimeout(function () {
-                    typePlaceholder(text, callback);
-                }, typingSpeed);
-                } else if (callback) {
-                setTimeout(callback, pauseAfterTyping);
-                }
+        $(function () {
+          const $input = $("#animated-placeholder");
+          if (!$input.length || $input.data("animated")) return;
+          $input.data("animated", true);
+    
+          const longUrl = "https://example.com/very/long/url/path";
+          const shortUrl = "https://lovilink.com/myurl";
+          const typingSpeed = 70;
+          const deletingSpeed = 40;
+          const pauseAfterTyping = 1500;
+          let i = 0;
+    
+          function typePlaceholder(text, callback) {
+            if (i < text.length) {
+              $input.attr("placeholder", $input.attr("placeholder") + text.charAt(i));
+              i++;
+              setTimeout(() => typePlaceholder(text, callback), typingSpeed);
+            } else if (callback) {
+              setTimeout(callback, pauseAfterTyping);
             }
-
-            function deletePlaceholder(callback) {
-                if (i > 0) {
-                $input.attr("placeholder", $input.attr("placeholder").slice(0, -1));
-                i--;
-                setTimeout(function () {
-                    deletePlaceholder(callback);
-                }, deletingSpeed);
-                } else if (callback) {
-                callback();
-                }
+          }
+    
+          function deletePlaceholder(callback) {
+            if (i > 0) {
+              $input.attr("placeholder", $input.attr("placeholder").slice(0, -1));
+              i--;
+              setTimeout(() => deletePlaceholder(callback), deletingSpeed);
+            } else if (callback) {
+              callback();
             }
-
-            $input.attr("placeholder", "");
-            typePlaceholder(longUrl, function () {
-                deletePlaceholder(function () {
-                i = 0;
-                typePlaceholder(shortUrl);
-                });
+          }
+    
+          $input.attr("placeholder", "");
+          typePlaceholder(longUrl, () => {
+            deletePlaceholder(() => {
+              i = 0;
+              typePlaceholder(shortUrl);
             });
+          });
         });
-    </script>
+      </script>
+
 </div>

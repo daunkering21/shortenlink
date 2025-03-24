@@ -8,6 +8,6 @@ class CookiePolicy extends Component
 {
     public function render()
     {
-        return view('livewire.page.cookie-policy');
+        return view('livewire.page.cookie-policy')->layout('layouts.home');
     }
 }

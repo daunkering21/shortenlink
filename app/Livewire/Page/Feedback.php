@@ -8,6 +8,6 @@ class Feedback extends Component
 {
     public function render()
     {
-        return view('livewire.page.feedback');
+        return view('livewire.page.feedback')->layout('layouts.home');
     }
 }
