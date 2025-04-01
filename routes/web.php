@@ -29,6 +29,11 @@ Route::prefix('info')->group( function() {
   Route::get('/cookie', CookiePolicy::class)->name('info-cookie');
 });
 
+Route::get('/test', function () {
+  // get geolocation disini
+  return view('test');
+});
+
 Route::prefix('auth')->group( function() {
   Route::get('/login', Login::class)->name('info-login');
   Route::get('/register', Register::class)->name('info-register');
