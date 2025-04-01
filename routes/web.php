@@ -30,8 +30,10 @@ Route::prefix('info')->group( function() {
 });
 
 Route::get('/test', function () {
-  // get geolocation disini
-  return view('test');
+  $ip = request()->ip();
+  return view('test', [
+    'ip' => $ip,
+  ]);
 });
 
 Route::prefix('auth')->group( function() {

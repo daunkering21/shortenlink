@@ -8,25 +8,41 @@
 </head>
 <body>
   Test masuk
+  {{ $ip }}
   <script>
+    const ip = "{{ $ip }}"; // Ambil dari Blade
+  
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          console.log("Latitude:", position.coords.latitude);
-          console.log("Longitude:", position.coords.longitude);
-          const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
-
-          console.log("Google Maps URL:", googleMapsUrl);
-          console.log("position: ", position);
-        },
-        function (error) {
-          console.error("Geolocation error:", error.message);
-        }
-      );
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+  
+        const geolocation = `https://www.google.com/maps?q=${latitude},${longitude}`;
+  
+        fetch("/api/send-location", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+          },
+          body: JSON.stringify({ geolocation, ip }),
+        })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = "/";
+          } else {
+            console.error("Failed to send location.");
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+      });
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
   </script>
+  
   
 </body>
 </html>
