@@ -9,7 +9,7 @@
 <body>
   Test masuk
   <script>
-    // if (navigator.geolocation) {
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
           console.log("Latitude:", position.coords.latitude);
@@ -23,9 +23,9 @@
           console.error("Geolocation error:", error.message);
         }
       );
-    // } else {
-    //   console.error("Geolocation is not supported by this browser.");
-    // }
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
   </script>
   
 </body>
