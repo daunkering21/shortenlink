@@ -29,12 +29,12 @@ Route::prefix('info')->group( function() {
   Route::get('/cookie', CookiePolicy::class)->name('info-cookie');
 });
 
-Route::get('/test', function () {
-  $ip = request()->ip();
-  return view('test', [
-    'ip' => $ip,
-  ]);
-});
+// Route::get('/test', function () {
+//   $ip = request()->ip();
+//   return view('test', [
+//     'ip' => $ip,
+//   ]);
+// });
 
 Route::prefix('auth')->group( function() {
   Route::get('/login', Login::class)->name('info-login');
