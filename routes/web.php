@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function(){
 // ==================== Blogs Page ==================== \\
 Route::get('/articles',[ArticlesController::class, 'index']);
 
-// ==================== Blogs Page ==================== \\
+// ==================== SPA Page ==================== \\
 require __DIR__.'/livewire.php';
 
 // ==================== Shortened Links ==================== \\
