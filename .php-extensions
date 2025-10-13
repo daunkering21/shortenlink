@@ -1,0 +1,13 @@
+pdo
+pdo_pgsql
+mbstring
+curl
+tokenizer
+xml
+ctype
+fileinfo
+bcmath
+openssl
+zip
+gd
+intl
